@@ -16,7 +16,7 @@ const Login = () => {
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch(`{process.env.BACKEND_URI}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
