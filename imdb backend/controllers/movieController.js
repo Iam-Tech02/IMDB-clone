@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const Movie = require('../models/Movie');
 const movieSchema = require('../validations/movieValidation');
+const connectDB = require('../config/db');
 
 exports.createMovie = async (req, res) => {
     try {
@@ -31,6 +32,7 @@ exports.createMovie = async (req, res) => {
   
 exports.getAllMovies = async (req, res) => {
   try {
+    await connectDB()
     const movies = await Movie.find();
     res.status(200).json(movies);
   } catch (err) {
