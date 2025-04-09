@@ -10,6 +10,7 @@ const path = require('path');
 
 dotenv.config();
 connectDB();
+console.log('Database Connected successfully')
 
 const app = express();
 app.use(express.json());
