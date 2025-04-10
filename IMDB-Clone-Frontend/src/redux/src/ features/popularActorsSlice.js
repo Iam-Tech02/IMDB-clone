@@ -7,7 +7,7 @@ export const fetchPopularActors = createAsyncThunk(
     const options = {
       method: 'GET',
       headers: {
-        'x-rapidapi-key': '67ef03508bmsh774b26c5ef6182dp1d5fd1jsn4afd79c18273',
+        'x-rapidapi-key': '7ae27d8682msh406019f5f9556b7p11b241jsn0a6d6363f4ce',
         'x-rapidapi-host': 'imdb232.p.rapidapi.com'
       }
     };
