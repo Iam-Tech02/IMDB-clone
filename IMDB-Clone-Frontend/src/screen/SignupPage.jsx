@@ -40,7 +40,7 @@ const Signup = () => {
     setError(null);
 
     try {
-      const response = await fetch(`${process.env.BACKEND_URI}/auth/signup`, {
+      const response = await fetch(`https://imdb-clone-be-production.up.railway.app/api/auth/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

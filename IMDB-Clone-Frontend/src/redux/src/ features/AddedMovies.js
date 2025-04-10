@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const fetchMovies = createAsyncThunk('movies/fetchMovies', async (_, { rejectWithValue }) => {
   try {
-    const res = await axios.get('http://localhost:5000/api/movies');
+    const res = await axios.get('https://imdb-clone-be-production.up.railway.app/api/movies');
     return res.data;
   } catch (err) {
     const message = err.response?.data?.message || 'Failed to fetch movies';
@@ -13,7 +13,7 @@ export const fetchMovies = createAsyncThunk('movies/fetchMovies', async (_, { re
 
 export const addMovie = createAsyncThunk('movies/addMovie', async (formData, { rejectWithValue }) => {
   try {
-    const res = await axios.post('http://localhost:5000/api/movies', formData, {
+    const res = await axios.post('https://imdb-clone-be-production.up.railway.app/api/movies', formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
     return res.data;
@@ -27,7 +27,7 @@ export const updateMovie = createAsyncThunk(
   'movies/updateMovie',
   async ({ id, formData }, { rejectWithValue }) => {
     try {
-      const res = await axios.put(`http://localhost:5000/api/movies/${id}`, formData, {
+      const res = await axios.put(`https://imdb-clone-be-production.up.railway.app/api/movies/${id}`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       return res.data;
@@ -40,7 +40,7 @@ export const updateMovie = createAsyncThunk(
 
 export const deleteMovie = createAsyncThunk('movies/deleteMovie', async (id, thunkAPI) => {
   try {
-    await axios.delete(`http://localhost:5000/api/movies/${id}`);
+    await axios.delete(`https://imdb-clone-be-production.up.railway.app/api/movies/${id}`);
     return id;
   } catch (err) {
     return thunkAPI.rejectWithValue(err.response?.data?.error || 'Failed to delete movie');

@@ -34,7 +34,7 @@ const MovieCarousel = () => {
     setSelectedMovie(movie);
     setSelectedActors(movie.actors.map((a) => ({ label: a, value: a })));
     setSelectedDirectors(movie.directors.map((d) => ({ label: d, value: d })));
-    setPosterPreview(`http://localhost:5000${movie.poster}`);
+    setPosterPreview(movie.poster);
     setShowEditModal(true);
   };
 
@@ -140,7 +140,7 @@ const MovieCarousel = () => {
                       }}
                     >
                       <img
-                        src={`http://localhost:5000${movie.poster}`}
+                        src={movie.poster}
                         alt={movie.title}
                         style={{
                           width: "100%",
